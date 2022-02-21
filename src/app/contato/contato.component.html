@@ -1,0 +1,22 @@
+<div class="container mt-5 bg">
+  <div class="jumbotron jumbotron-fluid jbcor">
+    <h1 class="mb-5 text-center cor font-italic"> Entre em contato com a gente</h1>
+    <div class="row d-flex align-items-center">
+
+      <label for="nome">Nome:</label> <br>
+      <input type="text" id="nome" onkeyup="validaNome()">
+      <div id="txtNome"></div>
+
+      <label for="email">E-mail:</label> <br>
+      <input type="email" id="email" onkeyup="validaEmail()">
+      <div id="txtEmail"></div>
+
+      <label for="assunto">Assunto:</label> <br>
+      <textarea  name="assunto" id="assunto" cols="60" rows="5" onkeyup="validaAssunto()"> </textarea>
+      <div id="txtAssunto"></div>
+
+      <button type="submit" onclick="enviar()">Enviar</button>
+
+    </div>
+      </div>
+  </div>
