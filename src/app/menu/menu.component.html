@@ -1,39 +1,95 @@
 <!--NavBar-->
-<nav class="navbar navbar-expand-lg navbar-dark py-0" id="cor">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/inicio">
-      <img class="imgLogo" src="https://i.imgur.com/W2P8tEp.png" alt="logotipo">
-    </a>
+<nav class="navbar navbar-expand-lg navbar-dark" id="cor">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto d-flex align-items-center">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/inicio">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/produto">Produtos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/contato">Contato</a>
-        </li>
-        <li class="nav-item" *ngIf="!auth.logado()">
-          <a class="nav-link" routerLink="/entrar">Login</a>
-        </li>
-        <li class="nav-item" *ngIf="!auth.logado()">
-          <a class="nav-link" routerLink="/cadastrar">Cadastre-se</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto d-flex align-items-center" *ngIf="auth.logado()">
-        <li class="nav-item pl-3">
-          <a (click)="sair()" class="m-0 font-weight-bold text-light fs16">Sair
-            <i class="fa fa-sign-out" aria-hidden="true"></i></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  <!--Logo do projeto-->
+  <a class="navbar-brand"  routerLink="/inicio">
+    <img class="imgLogo" src="https://i.imgur.com/W2P8tEp.png"  alt="logotipo"  height="120px" >
+  </a>
+  <!--/Logo do projeto-->
+
+  <!--Botão do menu-->
+  <button class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!--/Botão do menu-->
+
+
+
+
+  <div class="navbar-nav ml-auto mr-5 justify-content-between w-50 text-gold">
+    <!--Botão Home-->
+    <li class="nav-item">
+      <a class="nav-link active text-gold text-g"
+          aria-current="page"
+          routerLink="/inicio">Home</a>
+    </li>
+    <!--/Botão Home-->
+
+    <!--Botão Sobre-->
+    <li class="navbar-nav ml-1">
+      <div class="dropdown lojadrop">
+        <a class="dropdown-toggle text-gold text-g"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"> Sobre </a>
+
+        <div class="dropdown-menu bg-verde" aria-labelledby="dropdownMenuButton">
+          <hr class="mt-0 mb-0 bg-subcatg">
+          <a class="dropdown-item text-gold text-g ">Saiba mais sobre nós</a>
+          <hr class="mt-0 mb-0 bg-subcatg">
+          <a class="dropdown-item text-gold text-g ">Contato</a>
+        </div>
+      </div>
+    </li>
+    <!--/Botão Sobre-->
+
+
+    <!--Botão Produtos-->
+    <li class="nav-item ">
+      <a class="nav-link active text-gold text-g"
+          aria-current="page"
+          routerLink="/produto">Produtos</a>
+    </li>
+    <!--/Botão Produtos-->
+
+    <!--Botão Login-->
+    <li class="navbar-nav ml-1">
+      <div class="dropdown lojadrop">
+        <a class="dropdown-toggle text-gold text-g"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"> Login/Cadastro </a>
+
+        <div class="dropdown-menu bg-verde" aria-labelledby="dropdownMenuButton">
+          <hr class="mt-0 mb-0 bg-subcatg">
+          <a class="dropdown-item text-gold text-g">Entrar</a>
+          <hr class="mt-0 mb-0 bg-subcatg">
+          <a class="dropdown-item text-gold text-g">Torne-se um cooperado</a>
+        </div>
+      </div>
+    </li>
+    <!--/Botão Login-->
+
+
+          <!--Botão Sair-->
+          <ul class="navbar-nav ml-auto d-flex align-items-center">
+            <li class="nav-item pl-3">
+              <a (click)="sair()" class="m-0 font-weight-bold text-light fs16">Sair
+                <i class="fa fa-sign-out"
+                  aria-hidden="true"></i>
+                  </a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+        <!--Botão Sair-->
+
 <!--/NavBar-->

@@ -1,8 +1,37 @@
+
 #cor
 {
   background-color: #8cac7b ;
 }
 
 .imgLogo {
-  width: 250px;
+  width: 440px;
+  height: 150px;
 }
+.bg-subcatg{
+  background-color: #798e77;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.text-gold {
+  color: #ffff;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.text-g:hover{
+  opacity: 0.5;
+}
+
+.lojadrop{
+  margin-top: 8px !important;
+  margin-left: 5px !important;
+}
+
+.bg-verde {
+  background: #42594A;
+}
+
