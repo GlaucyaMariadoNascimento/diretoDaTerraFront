@@ -22,7 +22,7 @@
 
 
 
-  <div class="navbar-nav ml-auto mr-5 justify-content-between w-50 text-gold">
+  <div class="navbar-nav ml-auto mr-5  justify-content-end w-50 text-gold ">
     <!--Botão Home-->
     <li class="nav-item">
       <a class="nav-link active text-gold text-g"
@@ -32,7 +32,7 @@
     <!--/Botão Home-->
 
     <!--Botão Sobre-->
-    <li class="navbar-nav ml-1">
+    <li class="navbar-nav ml-3">
       <div class="dropdown lojadrop">
         <a class="dropdown-toggle text-gold text-g"
             id="dropdownMenuButton"
@@ -42,9 +42,9 @@
 
         <div class="dropdown-menu bg-verde" aria-labelledby="dropdownMenuButton">
           <hr class="mt-0 mb-0 bg-subcatg">
-          <a class="dropdown-item text-gold text-g ">Saiba mais sobre nós</a>
+          <a class="dropdown-item text-gold text-g "  routerLink="/sobre">Saiba mais sobre nós</a>
           <hr class="mt-0 mb-0 bg-subcatg">
-          <a class="dropdown-item text-gold text-g ">Contato</a>
+          <a class="dropdown-item text-gold text-g "  routerLink="/contato">Contato</a>
         </div>
       </div>
     </li>
@@ -52,7 +52,7 @@
 
 
     <!--Botão Produtos-->
-    <li class="nav-item ">
+    <li class="nav-item ml-3">
       <a class="nav-link active text-gold text-g"
           aria-current="page"
           routerLink="/produto">Produtos</a>
@@ -60,19 +60,19 @@
     <!--/Botão Produtos-->
 
     <!--Botão Login-->
-    <li class="navbar-nav ml-1">
+    <li class="navbar-nav ml-3" *ngIf="!auth.logado()">
       <div class="dropdown lojadrop">
         <a class="dropdown-toggle text-gold text-g"
             id="dropdownMenuButton"
             data-toggle="dropdown"
             aria-haspopup="true"
-            aria-expanded="false"> Login/Cadastro </a>
+            aria-expanded="false" > Login/Cadastro </a>
 
         <div class="dropdown-menu bg-verde" aria-labelledby="dropdownMenuButton">
           <hr class="mt-0 mb-0 bg-subcatg">
-          <a class="dropdown-item text-gold text-g">Entrar</a>
+          <a class="dropdown-item text-gold text-g"  routerLink="/entrar">Entrar</a>
           <hr class="mt-0 mb-0 bg-subcatg">
-          <a class="dropdown-item text-gold text-g">Torne-se um cooperado</a>
+          <a class="dropdown-item text-gold text-g"  routerLink="/cadastrar">Torne-se um cooperado</a>
         </div>
       </div>
     </li>
@@ -80,7 +80,7 @@
 
 
           <!--Botão Sair-->
-          <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <ul class="navbar-nav ml-auto d-flex align-items-center" *ngIf="auth.logado()">
             <li class="nav-item pl-3">
               <a (click)="sair()" class="m-0 font-weight-bold text-light fs16">Sair
                 <i class="fa fa-sign-out"
