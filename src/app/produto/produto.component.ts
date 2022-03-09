@@ -25,9 +25,9 @@ export class ProdutoComponent implements OnInit {
     private router: Router,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private authService: AuthService,
+    public authService: AuthService,
     public auth: AuthService
-    
+
   ) { }
 
   ngOnInit() {

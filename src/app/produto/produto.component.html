@@ -1,16 +1,18 @@
+<!-- Cadastro de Produto e Categoria -->
 <div class="container-fluid p-0 m-0" id="cor">
 
   <ul class="nav d-flex justify-content-center mb-4">
     <li class="nav-item">
-      <a class="nav-link" routerLink="/categoria">Cadastre uma nova categoria</a>
 
+      <!-- //*ngIf="authService.adm()"  >>> colocar depois de "<a" nos dois links abaixo p/ liberar acesso apenas p/ adm *** -->
+      <a class="nav-link" routerLink="/categoria">Cadastre uma nova categoria</a>
     </li>
     <li class="nav-item" >
-      <a class="nav-link">Cadastre um novo produto</a>
-      <!-- <button class="data-toggle='modal' data-target='#novoProduto'">teste</button> -->
+      <a class="nav-link" routerLink="/cadastro-produto">Cadastre um novo produto</a>
     </li>
   </ul>
   </div>
+<!-- /Cadastro de Produto e Categoria -->
 
 
   <div class="row">
@@ -20,7 +22,7 @@
   </div>
 
 
-<!-- nav-tab -->
+<!-- Nav-Produtos -->
 <ul class="nav nav-tabs d-flex justify-content-center my-5" >
   <li class="nav-item">
     <a class="nav-link active text-secondary font-weight-bold" id="nav-todosProdutos-tab" data-toggle="tab" href="#todosProdutos" role="tab" aria-controls="nav-todosProdutos" aria-selected="true">Todos os produtos</a>
@@ -31,10 +33,10 @@
   </li>
 
 </ul>
-<!-- /nav-tab -->
+<!-- /nav-produtos -->
 
 
-<!-- cards Produtos -->
+<!-- Cards Produtos -->
 <div class="container">
 
   <div class="tab-pane fade show active" id="todosProdutos" role="tabpanel" aria-labelledby="nav-todosProdutos-tab">
@@ -57,7 +59,7 @@
           <p class="card-text">{{produto.categoria}}</p>
           <p class="card-text">{{produto.quantidadekg}}</p>
           <p class="card-text">{{produto.preco}}</p>
-          <a href="" class="btn btn-primary">Comprar</a>
+          <a href="" class="btn btn-primary">Entre em Contato</a>
         </div>
       </div>
     </div>
@@ -102,45 +104,3 @@
 
 </div>
 <!-- /cards Produtos -->
-
-
-
-
-<!-- Modal
-<div class="modal fade" id="novoProduto" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Novo Produto</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="titulo">Nome</label>
-          <input [(ngModel)]='produto.nome' type="text" class="form-control" id="titulo" placeholder="Digite o nome do produto">
-        </div>
-
-        <div class="form-group">
-          <label for="texto">Texto</label>
-          <textarea [(ngModel)]='produto.preco' class="form-control" name="texto" id="texto" placeholder="Digite o preço do produto" rows="3"></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="texto">Escolha um produto ou <a data-dismiss="modal" routerLink="/categoria">cadastre um novo</a>: </label>
-          <select class="form-control" name="tema" id="tema" [(ngModel)]='idCategoria' (change)="findByIdCategoria()">
-            <option *ngFor="let item of listaCategorias" value="{{item.id}}">{{item.descricao}}</option>
-          </select>
-        </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success" (click)="publicar()" data-dismiss="modal">Publicar</button>
-      </div>
-    </div>
-  </div>
-</div>
-Modal-->
-

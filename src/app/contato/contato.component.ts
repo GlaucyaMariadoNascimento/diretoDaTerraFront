@@ -9,7 +9,10 @@ export class ContatoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
 
+  enviar(){
+    alert('futuramente iremos implementar no backend para o email ser enviado')
+  }
 }

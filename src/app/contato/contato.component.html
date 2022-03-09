@@ -1,22 +1,52 @@
-<div class="container mt-5 bg">
-  <div class="jumbotron jumbotron-fluid jbcor">
-    <h1 class="mb-5 text-center cor font-italic"> Entre em contato com a gente</h1>
-    <div class="row d-flex align-items-center">
+<div class="container mt-5 bg d-flex justify-content-between">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="jumbotron jumbotron-fluid jbcor d-flex flex-column align-items-center">
+        <h1 class="mb-5 text-center cor font-italic"> Entre em contato com a gente</h1>
+        <form class="d-flex flex-column col-md-10 ">
 
-      <label for="nome">Nome:</label> <br>
-      <input type="text" id="nome" onkeyup="validaNome()">
-      <div id="txtNome"></div>
+          <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input class="mb-2 form-control w-100" type="text" id="nome">
+            <div id="txtNome"></div>
+          </div>
 
-      <label for="email">E-mail:</label> <br>
-      <input type="email" id="email" onkeyup="validaEmail()">
-      <div id="txtEmail"></div>
+          <label for="email">E-mail:</label> <br>
+          <input class="mb-2" type="email" id="email">
+          <div id="txtEmail"></div>
 
-      <label for="assunto">Assunto:</label> <br>
-      <textarea  name="assunto" id="assunto" cols="60" rows="5" onkeyup="validaAssunto()"> </textarea>
-      <div id="txtAssunto"></div>
+          <label for="assunto">Assunto:</label> <br>
+          <textarea class="mb-2" name="assunto" id="assunto" cols="60" rows="5"> </textarea>
+          <div id="txtAssunto"></div>
 
-      <button type="submit" onclick="enviar()">Enviar</button>
+          <button type="submit" (click)="enviar()">Enviar</button>
 
-    </div>
+        </form>
       </div>
+    </div>
+    <div class="col-md-6">
+      <div class="jumbotron jumbotron-fluid jbcor d-flex flex-column align-items-center">
+        <h1 class="mb-5 text-center cor font-italic">Compre conosco</h1>
+        <form class="d-flex flex-column col-md-10 ">
+
+          <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input class="mb-2 form-control w-100" type="text" id="nome">
+            <div id="txtNome"></div>
+          </div>
+
+          <label for="email">E-mail:</label> <br>
+          <input class="mb-2" type="email" id="email">
+          <div id="txtEmail"></div>
+
+          <label for="assunto">Produto e quantidade:</label> <br>
+          <textarea class="mb-2" name="assunto" id="assunto" cols="60" rows="5"> </textarea>
+          <div id="txtAssunto"></div>
+
+          <button type="submit" (click)="enviar()">Enviar</button>
+
+        </form>
+      </div>
+    </div>
   </div>
+</div>

@@ -37,7 +37,7 @@ export class ProdutoEditComponent implements OnInit {
 
     let id = this.route.snapshot.params['id']
     this.findByIdProduto(id)
-    this.findAllCategorias
+    this.findAllCategorias()
   }
 
   findByIdProduto(id: number) {
@@ -64,7 +64,7 @@ export class ProdutoEditComponent implements OnInit {
 
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
-      alert('Postagem atualizada com sucesso!')
+      alert('Produto atualizado com sucesso!')
       this.router.navigate(['/inicio'])
     })
   }
