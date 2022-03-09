@@ -1,29 +1,48 @@
-<div class="container-fluid">
-    <div class="row d-flex align-items-center bg-light">
-        <div class="col-md-6 bg-light">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-6 bg-light">
-                    <h1 class="text-center">Entrar</h1>
-                    <div class="form">
-                        <div class="form-group">
-                            <label for="usuario">Email</label>
-                            <input [(ngModel)]="userLogin.email" class="form-control" type="text" name="usuario" id="usuario" placeholder="Insira seu Email...">
-                        </div>
-                        <div class="form-group">
-                            <label for="usuario">Senha</label>
-                            <input [(ngModel)]="userLogin.senha" class="form-control" type="password" name="senha" id="senha" placeholder="Insira sua senha...">
-                            <div class="d-flex justify-content-center">
-                                <button type="button" class="btn btn-success btn-rounded my-4" data-mdb-ripple-color="dark" (click)="entrar()">Entrar</button>
+<div>
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-md-12">
+
+                <div class="row d-flex justify-content-center my-5">
+                    <div class="col-md-4">
+                        <div class="row text-center d-flex justify-content-center" id="imglogin">
+                            <div class="col-md-8">
+                                <div class="card-body text-center">
+                                    <h3 class="my-5">Login</h3>
+                                </div>
+
+                                <form class="mb-5">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="email" name="email"
+                                            placeholder="Usuário" [(ngModel)]="userLogin.email"
+                                            aria-describedby="email" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="senha" name="senha"
+                                            placeholder="Senha" [(ngModel)]="userLogin.senha" />
+                                    </div>
+
+                                    <div class=" text-center">
+                                        <a class="fontP" routerLink="/inicio">Esqueceu sua senha?</a>
+                                    </div>
+
+                                    <div class="mt-4 mb-3">
+                                        <button class="btn btn-success rounded-pill text-white font-weight-bold"
+                                            type="button">
+                                            <span class="m-4" (click)="entrar()">Entrar</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="text-center mt-2 mb-4">
+                                        <a class="fontP" routerLink="/cadastrar">Cadastre-se</a>
+                                    </div>
+                                </form>
                             </div>
-                            <a href="#"><p class="text-center fontP">Esqueceu sua senha?</p></a>
                         </div>
-                        <hr class="my-4">
-                        <p class="text-center">Não tem uma conta? <a
-                            routerLink="/cadastrar">Cadastre-se</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6" id="imglogin"></div>
     </div>
 </div>

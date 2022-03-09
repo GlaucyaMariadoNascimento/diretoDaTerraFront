@@ -1,17 +1,20 @@
 #imglogin {
-    background-image: url('https://br.lexlatin.com/sites/default/files/2020-12/agro.jpg');
-
-    min-height: 100vh;
-    background-position: center;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFKl2hCUyE9AJoR9Iypj40Z4vqiBYC5DHrqw&usqp=CAU');
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 10%;
+    border: 3px solid #a1b9a1;
+    position: relative;
+    filter:opacity(alpha=60);
+    -moz-opacity:0.7;
+    opacity:0.7;
 }
 
 .fontP {
     font-size: 12px;
 }
-h1 {
-    font-size: 45px;
+h3 {
+    font-size: 35px;
     font-family: 'Times New Roman', Times, serif;
-    color: #8CAC7B;
+    color: #373a35;
 }
