@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { Categoria } from '../model/categoria';
 import { Produto } from '../model/produto';
+import { Usuario } from '../model/usuario';
+import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
@@ -13,9 +17,17 @@ export class CadastroProdutoComponent implements OnInit {
   produto: Produto = new Produto()
   listaProduto: Produto[]
 
+  user: Usuario = new Usuario()
+  idUser = environment.id
+
+  categoria: Categoria = new Categoria()
+  idCategoria: number
+  listaCategorias: Categoria[]
+
   constructor(
     private router: Router,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private categoriaService: CategoriaService,
   ) { }
 
   ngOnInit() {
@@ -26,6 +38,7 @@ export class CadastroProdutoComponent implements OnInit {
     // }
     this.produtoService.refreshToken()
     this.findAllProdutos()
+    this.findAllCategorias()
   }
 
   findAllProdutos(){
@@ -34,7 +47,24 @@ export class CadastroProdutoComponent implements OnInit {
     })
   }
 
+  findByIdCategoria() {
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) => {
+      this.categoria = resp
+    })
+  }
+
+  findAllCategorias() {
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+      this.listaCategorias = resp
+    })
+  }
+
   cadastrar() {
+    this.categoria.id = this.idCategoria
+    this.produto.categoria = this.categoria
+
+    this.user.id = this.idUser
+    this.produto.usuario = this.user
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {this.produto = resp
     alert('Produto cadastrado com sucesso!')
     this.findAllProdutos()

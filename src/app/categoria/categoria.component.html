@@ -1,10 +1,10 @@
 
   <div class="container-fluid">
 
-    <div class="row my-3">
+    <div class="row mt-5">
       <div class="col-md-12">
 
-        <h1 class="fs-47 text-center">Categorias</h1>
+        <h1 class="fs-50 text-center">Categorias</h1>
 
         <h5 class="fs-18 text-center mt-3">Veja aqui todas as categorias cadastradas ou cadastre uma nova:</h5>
 
@@ -59,8 +59,8 @@
               <th>{{item.categoria}}</th>
               <td>{{item.descricao}}</td>
               <td class="d-flex justify-content-end">
-                <button class="btn corBotao text-white mr-3" [routerLink]="['/categoria-edit', categoria.id]">Editar</button>
-                <button class="btn btn-danger" [routerLink]="['/categoria-delete', categoria.id]">Apagar</button>
+                <button class="btn corBotao text-white mr-3" [routerLink]="['/categoria-edit', item.id]">Editar</button>
+                <button class="btn btn-danger" [routerLink]="['/categoria-delete', item.id]">Apagar</button>
               </td>
             </tr>
           </tbody>

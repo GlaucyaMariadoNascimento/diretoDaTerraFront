@@ -17,7 +17,7 @@ a:hover {
 }
 
 .text-gold {
-  color: #ffff;
+  color: rgba(255, 255, 255, 0.932);
   font-weight: 5040;
   font-size: 20px;
 }

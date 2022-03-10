@@ -35,8 +35,7 @@
 }
 
 #myFooter .social-networks a {
-  font-size: 32px;
-  color: #f9f9f9;
+  font-size: 40px;
   transition: 0.2s;
 }
 
@@ -44,11 +43,12 @@
   text-decoration: none;
 }
 
-#myFooter #grupo6 {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
+.imgLogo {
+  width: 237px;
+  height: 55px;
 }
-#myFooter #instagram:hover {
-  color: purple;
+
+.imgLogo {
+  width: 237px;
+  height: 46px;
 }

@@ -6,6 +6,7 @@ ul {
 html
 {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .fs-50{

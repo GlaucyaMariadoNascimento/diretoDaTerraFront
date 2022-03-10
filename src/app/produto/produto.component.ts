@@ -38,7 +38,8 @@ export class ProdutoComponent implements OnInit {
     window.scroll(0,0)
 
   //   this.authService.refreshToken()
-    // this.getAllProduto()
+  this.produtoService.refreshToken()
+    this.getAllProduto()
   }
 
   findByIdCategoria() {
