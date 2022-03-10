@@ -44,18 +44,19 @@
     </div> -->
 
 
-    <div class="row row-cols-1 row-cols-md-4">
-      <div class="col mb-4">
+    <div class="row">
+      <div class="col mb-4 d-flex">
         <div class="card" *ngFor='let produto of listaProdutos'>
-          <img src="{{produto.foto}}" class="card-img-top" alt="img do produto">
+          <img src="{{produto.foto}}" class="card-img-top img" alt="img do produto">
           <div class="card-body text-center">
             <h5 class="card-title">{{produto.nome}}</h5>
             <p class="card-text">{{produto.categoria.descricao}}</p>
             <p class="card-text">{{produto.quantidadekg}}</p>
             <p class="card-text">{{produto.preco}}</p>
-            <a href="" class="btn corBotao text-white mr-2" [routerLink]="['/detalhe-produto', produto.id]">Detalhes</a>
-            <a href="" class="btn corBotao text-white mt-2" routerLink="/contato">Entre em Contato</a>
-
+            <div class="d-flex justify-content-center">
+              <a class="button btn corBotao text-white mr-2 mt-2" [routerLink]="['/detalhe-produto', produto.id]">Detalhes</a>
+              <a class="button btn corBotao text-white mt-2" routerLink="/contato">Entre em Contato</a>
+            </div>
           </div>
         </div>
       </div>
@@ -81,7 +82,7 @@
 -->
 
 
-<div class="row row-cols-1 row-cols-md-4" *ngFor="let categoria of listaCategorias">
+<div class="row" *ngFor="let categoria of listaCategorias">
   <div class="col mb-4">
     <div class="card *ngFor='let produto of listaProdutos'">
       <img src="{{produto.foto}}" class="card-img-top" alt="img do produto">

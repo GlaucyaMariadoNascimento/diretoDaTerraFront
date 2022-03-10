@@ -10,3 +10,11 @@
 .corBotao:hover {
   background-color: #6d8b5aea;
 }
+
+.img{
+  height: 10vw;
+}
+
+.button{
+  height: 20%;
+}
