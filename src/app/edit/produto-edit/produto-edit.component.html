@@ -10,13 +10,28 @@
 <div class="col-md-6">
 
   <div class="form-group">
-    <label for="titulo">Nome</label>
-    <input [(ngModel)]='produto.nome' type="text" class="form-control" id="titulo" placeholder="Digite o nome do produto">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" name='nome' id="nome" placeholder="Digite o nome do produto" [(ngModel)]="produto.nome">
   </div>
 
   <div class="form-group">
-    <label for="texto">Texto</label>
-    <textarea [(ngModel)]='produto.preco' class="form-control" name="texto" id="texto" placeholder="Digite o texto" rows="3"></textarea>
+    <label for="preco">Preço</label>
+    <input type="text" class="form-control" name='preco' id="preco" placeholder="Digite o preço do produto" [(ngModel)]="produto.preco">
+  </div>
+
+  <div class="form-group">
+    <label for="produtor">Produtor</label>
+    <input type="text" class="form-control" name='produtor' id="produtor" placeholder="Digite o nome do produtor" [(ngModel)]="produto.produtor">
+  </div>
+
+  <div class="form-group">
+    <label for="quantidadekg">Quantidade</label>
+    <input type="text" class="form-control" name='quantidadekg' id="quantidadekg" placeholder="Digite a quantidade em kg do produto" [(ngModel)]="produto.quantidadekg">
+  </div>
+
+  <div class="form-group">
+    <label for="foto">Foto</label>
+    <input type="text" class="form-control" name='foto' id="foto" placeholder="Link da foto do produto" [(ngModel)]="produto.foto">
   </div>
 
   <div class="form-group">

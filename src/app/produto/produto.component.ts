@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/categoria';
 import { Produto } from '../model/produto';
+import { Usuario } from '../model/usuario';
 import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
@@ -21,6 +22,9 @@ export class ProdutoComponent implements OnInit {
   listaCategorias: Categoria[]
   idCategoria: number
 
+  user: Usuario = new Usuario()
+  idUser = environment.id
+
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
@@ -34,7 +38,7 @@ export class ProdutoComponent implements OnInit {
     window.scroll(0,0)
 
   //   this.authService.refreshToken()
-    this.getAllProduto()
+    // this.getAllProduto()
   }
 
   findByIdCategoria() {
@@ -54,8 +58,8 @@ export class ProdutoComponent implements OnInit {
     this.categoria.id = this.idCategoria
     this.produto.categoria = this.categoria
 
-    // this.user.id = this.idUser
-    // this.produto.usuario = this.user
+    this.user.id = this.idUser
+    this.produto.usuario = this.user
 
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp

@@ -26,13 +26,13 @@ export class CategoriaComponent implements OnInit {
     //   this.router.navigate(['/entrar'])
     // }
 
+    this.categoriaService.refreshToken()
     this.findAllCategorias()
   }
 
   findAllCategorias(){
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
       this.listaCategoria = resp
-      console.log(this.categoria)
     })
   }
 

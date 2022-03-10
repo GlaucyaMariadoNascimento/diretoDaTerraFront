@@ -9,13 +9,26 @@
         <h5 class="fs-18 text-center mt-3">Veja aqui todos os produtos cadastrados ou cadastre um novo:</h5>
 
         <div class="row d-flex justify-content-center mt-4 mb-5">
-          <div class="col-md-3">
+          <div class="col-md-6">
             <div class="form-group">
-              <input type="text" class="form-control" name='descricao' id="descricao" placeholder="Digite a descrição do produto" [(ngModel)]="produto.nome">
+              <input type="text" class="form-control" name='nome' id="nome" placeholder="Digite o nome do produto" [(ngModel)]="produto.nome">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name='preco' id="preco" placeholder="Digite o preço do produto" [(ngModel)]="produto.preco">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name='produtor' id="produtor" placeholder="Digite o nome do produtor" [(ngModel)]="produto.produtor">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name='quantidadekg' id="quantidadekg" placeholder="Digite a quantidade em kg do produto" [(ngModel)]="produto.quantidadekg">
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control" name='foto' id="foto" placeholder="Link da foto do produto" [(ngModel)]="produto.foto">
             </div>
 
             <div class="d-flex justify-content-center">
-              <button class="btn btn-success mt-3" (click)="cadastrar()">Cadastrar</button>
+              <button class="btn corBotao text-white" (click)="cadastrar()">Cadastrar</button>
             </div>
 
 
@@ -34,7 +47,7 @@
 
     <div class="row mt-5">
       <div class="col-md-12">
-        <h2 class="text-center">Todos os Produtos</h2>
+        <h2 class="text-center">Todos os produtos</h2>
       </div>
     </div>
 
@@ -44,18 +57,18 @@
         <table class="table table-hover">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">Descrição</th>
+              <th scope="col">Produto</th>
+              <th scope="col">Categoria</th>
               <th scope="col" class="text-right">Modificações</th>
             </tr>
           </thead>
 
           <tbody>
             <tr *ngFor="let item of listaProduto">
-              <th>{{item.id}}</th>
-              <td>{{item.nome}}</td>
+              <th>{{item.nome}}</th>
+              <td>{{item.preco}}</td>
               <td class="d-flex justify-content-end">
-                <button class="btn btn-info mr-3" [routerLink]="['/produto-edit', produto.id]">Editar</button>
+                <button class="btn corBotao text-white mr-3" [routerLink]="['/produto-edit', produto.id]">Editar</button>
                 <button class="btn btn-danger" [routerLink]="['/produto-delete', produto.id]">Apagar</button>
               </td>
             </tr>
@@ -66,3 +79,5 @@
     </div>
 
   </div>
+
+

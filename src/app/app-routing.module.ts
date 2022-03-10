@@ -6,6 +6,7 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import { ContatoComponent } from './contato/contato.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
+import { DetalheProdutoComponent } from './detalhe-produto/detalhe-produto.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
@@ -25,6 +26,8 @@ const routes: Routes = [
 
   {path: 'produto', component: ProdutoComponent},
   {path: 'categoria', component: CategoriaComponent},
+  {path: 'cadastro-produto', component: CadastroProdutoComponent},
+  {path: 'detalhe-produto/:id', component: DetalheProdutoComponent},
   {path: 'categoria-edit/:id', component: CategoriaEditComponent},
   {path: 'categoria-delete/:id', component: CategoriaDeleteComponent},
   {path: 'produto-edit/:id', component: ProdutoEditComponent},

@@ -24,14 +24,13 @@ export class CadastroProdutoComponent implements OnInit {
     // if(environment.token == '') {
     //   this.router.navigate(['/entrar'])
     // }
-
+    this.produtoService.refreshToken()
     this.findAllProdutos()
   }
 
   findAllProdutos(){
     this.produtoService.getAllProduto().subscribe((resp: Produto[]) => {
       this.listaProduto = resp
-      console.log(this.produto)
     })
   }
 

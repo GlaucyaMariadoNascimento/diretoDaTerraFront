@@ -1,4 +1,12 @@
-#cor
+.corVerdeId
 {
-  background-color: #8cac7b9a ;
+  background-color: #1b4e00be;
+}
+
+.corBotao
+{
+  background-color: #8dad7b;
+}
+.corBotao:hover {
+  background-color: #6d8b5aea;
 }

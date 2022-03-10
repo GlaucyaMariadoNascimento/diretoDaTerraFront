@@ -2,3 +2,20 @@
 ul {
     list-style: none;
 }
+
+html
+{
+  scroll-behavior: smooth;
+}
+
+.fs-50{
+  font-size: 50pt;
+}
+
+.corBotao
+{
+  background-color: #8dad7b;
+}
+.corBotao:hover {
+  background-color: #6d8b5aea;
+}
