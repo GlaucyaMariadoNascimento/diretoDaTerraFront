@@ -32,9 +32,9 @@ export class AuthService {
     return this.http.post<Usuario>('https://diretodaterra.herokuapp.com/usuarios/cadastrar', usuario)
   }
 
-getByIdUser(id: number): Observable<Usuario> {
- return this.http.get<Usuario>(`https://diretodaterra.herokuapp.com/usuarios/${id}`, this.token)
- }
+  getByIdUser(id: number): Observable<Usuario> {
+  return this.http.get<Usuario>(`https://diretodaterra.herokuapp.com/usuarios/${id}`, this.token)
+  }
 
   logado() {
     let ok: boolean = false

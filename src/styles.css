@@ -13,10 +13,18 @@ html
   font-size: 50pt;
 }
 
+.fs-18{
+  font-size: 18pt;
+}
+
 .corBotao
 {
   background-color: #8dad7b;
 }
 .corBotao:hover {
   background-color: #6d8b5aea;
+}
+
+.corLetra {
+  color: #8CAC7B;
 }
