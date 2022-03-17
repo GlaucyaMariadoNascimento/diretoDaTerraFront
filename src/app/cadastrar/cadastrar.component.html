@@ -1,8 +1,17 @@
-<body>
-  <div class="container">
-      <h2>Cadastro</h2>
+<div class="imgback">
+  <img src="https://img.freepik.com/fotos-gratis/plantio-de-mudas-jovem-planta-na-luz-da-manha-no-fundo-da-natureza_34998-98.jpg" alt="">
+</div>
+<div class="row">
+
+  <div class="col-md-5"></div>
+
+  <div class="col-md-6">
+
+    <div class="container">
+      
   
       <form>
+        <h2>Cadastro</h2>
           <div class="input-field">
             <input type="text" name="nome" placeholder="Nome" id="nome" [(ngModel)]="usuario.nome"/>
           <label for="nome">Nome: </label>
@@ -30,7 +39,6 @@
           </div>
           
           <div class="input-field">
-            <label for="tipo">Tipo de Usuário</label>
             <select name="tipo" id="tipo" (change)="tipoUser($event)">
               <option>Selecione um tipo de usuário:</option>
               <option value="normal">Normal</option>
@@ -45,5 +53,10 @@
           </div>
       </form>
   
+</div>
+
+
   </div>
-</body>
+
+</div>
+  

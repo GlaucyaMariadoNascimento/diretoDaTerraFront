@@ -1,3 +1,17 @@
+.imgb img {
+  object-fit: cover;
+    width: 100vw;
+    height: 155vh;
+    margin-top: -20vh;
+}
+
+.imgb {
+  z-index: -10 !important;
+    position: absolute;
+}
+
+
+
 .cor
 {
 color: #8cac7b ;

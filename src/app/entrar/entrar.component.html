@@ -1,26 +1,38 @@
-<body>
-    <div class="container">
-        <h2>Login</h2>
-    
-        <form>
-            <div class="input-field">
-                <input type="email" id="usuario" name="usuario" placeholder="Insira seu usuario" aria-describedby="email" [(ngModel)]="userLogin.email">
-                <label for="usuario">Usuario: </label>
+<div class="imgbac">
+    <img src="https://img.freepik.com/fotos-gratis/meio-ambiente-dia-da-terra-nas-maos-de-arvores-que-crescem-mudas_34998-210.jpg?size=626&ext=jpg" alt="">
+</div>
+
+<div class="row">
+    <div class="col-md-5"></div>
+
+    <div class="col-md-6">
+
+        <div class="container">
+            <h2>Login</h2>
+        
+            <form>
+                <div class="input-field">
+                    <input type="email" id="usuario" name="usuario" placeholder="Insira seu usuario" aria-describedby="email" [(ngModel)]="userLogin.email">
+                    <label for="usuario">Usuario: </label>
+                </div>
+        
+                <div class="input-field">
+                    <input type="password" id="senha" placeholder="Insira sua senha" [(ngModel)]="userLogin.senha">
+                    <label for="senha">Senha: </label>
+                </div>
+        
+                <div class="center">
+                    <button (click)="entrar()">Entrar</button>
+                </div>
+            </form>
+        
+            <div class="links">
+                <a routerLink="/inicio"><p>Esqueceu a sua senha ?</p></a>
+                <a routerLink="/cadastrar"><p>Ainda não sou cadastrado ?</p></a>
             </div>
-    
-            <div class="input-field">
-                <input type="password" id="senha" placeholder="Insira sua senha" [(ngModel)]="userLogin.senha">
-                <label for="senha">Senha: </label>
-            </div>
-    
-            <div class="center">
-                <button (click)="entrar()">Entrar</button>
-            </div>
-        </form>
-    
-        <div class="links">
-            <a routerLink="/inicio"><p>Esqueceu a sua senha ?</p></a>
-            <a routerLink="/cadastrar"><p>Ainda não sou cadastrado ?</p></a>
         </div>
+        
     </div>
-</body>
+</div>
+
+    

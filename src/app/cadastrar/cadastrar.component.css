@@ -4,28 +4,33 @@
     box-sizing: border-box;
 }
 
-body {
-    background-image: url('https://img.freepik.com/fotos-gratis/plantio-de-mudas-jovem-planta-na-luz-da-manha-no-fundo-da-natureza_34998-98.jpg');
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+.imgback img {
+    object-fit: cover;
+    width: 100vw;
+    height: 120vh;
+    margin-top: -20vh;
+  }
+  
+  .imgback {
+    z-index: -10 !important;
+    position: absolute;   
+  }
 
 h2 {
-    font-size: 30px;
-    color: #fff;
+    font-size: 25px;
+    color: #8fbc8f;
     text-align: center;
-    margin: 20px;
+    margin: 15px;
 }
 
 .container {
-    width: 350px;
+    width: 325px;
     background: rgba(0, 0, 0, 0.527);
-    border-radius: 30%;
-    box-shadow: 1px 2px 10px #000, 3px 6px 20px #000;
-    padding: 50px 20px;
+    border-radius: 3%;
+    box-shadow: 2px 3px 20px #000, 3px 6px 15px #000;
+    padding: 42px 20px;
+    display: flex;
+    justify-content: center;
 }
 
 input {
@@ -37,6 +42,9 @@ input {
     border-bottom: 1px solid #fff;
     color: #fff;
     transition: .25s ease-in-out;
+    cursor: alias;
+    display: flex;
+    justify-content: left;
 }
 
 .input-field {
@@ -56,6 +64,7 @@ label {
 input:focus {
     border-bottom: 2px solid #26a96a;
     box-shadow: 0 1px 0 0 #26a96a;
+    cursor: pointer;
 }
 
 input:focus + label {
@@ -80,33 +89,50 @@ input::placeholder {
 }
 
 #tamBotao {
-  font-size: 20px;
-  background: transparent;
-  border: 2px solid #fff;
-  border-radius: 30px;
-  cursor: pointer;
-  text-transform: capitalize;
-  padding: 8px 10px;
-  margin: 5px;
+    font-size: 20px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    text-transform: capitalize;
+    padding: 8px 10px;
+    margin: 5px;
 }
 
 #tmBotao {
-  font-size: 20px;
-  background: transparent;
-  border: 2px solid #fff;
-  border-radius: 30px;
-  cursor: pointer;
-  text-transform: capitalize;
-  padding: 8px 10px;
-  margin: 5px;
+    font-size: 20px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    cursor: progress;
+    text-transform: capitalize;
+    padding: 8px 10px;
+    margin: 5px;
+    transition: ease-in-out .45s;
 }
 
 #tamBotao:hover {
-  background-color: rgba(255, 0, 0, 0.5);
-  transition: ease-in-out .45s;
+    background-color: rgba(255, 0, 0, 0.5);
+    transition: ease-in-out .45s;
 }
 
 #tmBotao:hover {
-  background-color: green;
-  transition: ease-in-out .45s;
+    background-color: green;
+    transition: ease-in-out .45s;
+}
+
+select {
+    background-color: transparent;
+    color:#fff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 4px;
+    cursor: pointer;
+}
+
+option {
+    background-color: transparent;
+    color: black;
 }
