@@ -16,3 +16,13 @@
 .corBotao:hover {
   background-color: #6d8b5aea;
 }
+
+label {
+  display: inline-block;
+  width: 200px;
+  vertical-align: top;
+}
+
+.required {
+  color: rgb(189, 29, 29);
+}

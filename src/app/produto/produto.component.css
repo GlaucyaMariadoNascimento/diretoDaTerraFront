@@ -1,7 +1,7 @@
 .imgbelo img {
   object-fit: cover;
     width: 100vw;
-    height: 350vh;
+    height: 340vh;
     margin-top: -20vh;
 }
 
@@ -12,7 +12,7 @@
 
 .corNavCadastro
 {
-  background-color: #1b4e00be;
+  background-color: #1b4e0028;
 }
 
 .corBotao
@@ -23,8 +23,20 @@
   background-color: #6d8b5aea;
 }
 
-.imgTamanho{
-  height: 50px;
-  width: 50px;
+.cardHover{
+  transition: transform 0.5s
 }
 
+.cardHover:hover{
+  -webkit-box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 9px 7px rgba(0,0,0,0.75);
+  transition: 0.5s;
+  transform: translateY(-5px);
+}
+
+.text{
+  text-transform: uppercase;
+  font-weight: 900;
+  color:hsla(135, 91%, 34%, 0.548) ;
+}

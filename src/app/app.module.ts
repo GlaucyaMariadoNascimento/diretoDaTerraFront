@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
@@ -24,6 +25,8 @@ import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.com
 import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { DetalheProdutoComponent } from './detalhe-produto/detalhe-produto.component';
+import { AlertasComponent } from './alertas/alertas.component';
+
 
 
 @NgModule({
@@ -47,13 +50,15 @@ import { DetalheProdutoComponent } from './detalhe-produto/detalhe-produto.compo
     CadastroProdutoComponent,
     DetalheProdutoComponent,
     SobreComponent,
+    AlertasComponent,
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot(),
   ],
   providers: [{
     provide: LocationStrategy,

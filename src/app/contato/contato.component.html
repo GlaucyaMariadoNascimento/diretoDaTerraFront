@@ -1,55 +1,72 @@
 <div class="imgb">
-  <img src="https://img.freepik.com/fotos-gratis/plantio-de-mudas-jovem-planta-na-luz-da-manha-no-fundo-da-natureza_34998-98.jpg" alt="">
+  <img
+    src="https://img.freepik.com/fotos-gratis/plantio-de-mudas-jovem-planta-na-luz-da-manha-no-fundo-da-natureza_34998-98.jpg"
+    alt=""
+  />
 </div>
 
-<div class="container mt-5 bg d-flex justify-content-between">
-  <div class="row">
+<div class="container mt-4 bg">
+  <div class="row d-flex justify-content-between">
     <div class="col-md-6">
-      <div class="jumbotron jumbotron-fluid jbcor d-flex flex-column align-items-center">
-        <h1 class="mb-5 text-center cor font-italic"> Entre em contato com a gente</h1>
-        <form class="d-flex flex-column col-md-10 ">
+      <div
+        class="jumbotron jumbotron-fluid jbcor d-flex flex-column align-items-center borda"
+      >
+        <h2 class="mb-5 text-center text corLetra">Entre em contato</h2>
 
+        <form class="d-flex flex-column col-md-10">
           <div class="form-group">
             <label for="nome">Nome:</label>
-            <input class="mb-2 form-control w-100" type="text" id="nome">
+            <input class="form-control w-100" type="text" id="nome" />
             <div id="txtNome"></div>
           </div>
 
-          <label for="email">E-mail:</label> <br>
-          <input class="mb-2 w-100" type="email" id="email">
+          <label for="email">E-mail:</label> <br />
+          <input class="w-100" type="email" id="email" />
           <div id="txtEmail"></div>
 
-          <label for="assunto">Assunto:</label> <br>
-          <textarea class="mb-2 w-100" name="assunto" id="assunto" cols="60" rows="5"> </textarea>
+          <label for="assunto">Assunto:</label> <br />
+          <textarea
+            class="w-100"
+            name="assunto"
+            id="assunto"
+            cols="60"
+            rows="5"
+          >
+          </textarea>
           <div id="txtAssunto"></div>
 
           <button type="submit" (click)="enviar()">Enviar</button>
-
         </form>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="jumbotron jumbotron-fluid jbcor d-flex flex-column align-items-center">
-        <h1 class="mb-5 text-center cor font-italic">Compre conosco</h1>
-        <form class="d-flex flex-column col-md-10 ">
-        <br>
-        <br>
+      <div
+        class="jumbotron jumbotron-fluid jbcor d-flex flex-column d-flex align-items-center borda"
+      >
+        <h2 class="mb-5 text-center text corLetra">Compre conosco</h2>
+        <form class="d-flex flex-column col-md-10">
           <div class="form-group">
             <label for="nome">Nome:</label>
-            <input class="mb-2 form-control w-100" type="text" id="nome">
+            <input class="form-control w-100" type="text" id="nome" />
             <div id="txtNome"></div>
           </div>
 
-          <label for="email">E-mail:</label> <br>
-          <input class="mb-2 w-100" type="email" id="email">
+          <label for="email">E-mail:</label> <br />
+          <input class="w-100" type="email" id="email" />
           <div id="txtEmail"></div>
 
-          <label for="assunto">Produto e quantidade:</label> <br>
-          <textarea class="mb-2 w-100" name="assunto" id="assunto" cols="60" rows="5"> </textarea>
+          <label for="assunto">Produto e Quantidade:</label> <br />
+          <textarea
+            class="w-100"
+            name="assunto"
+            id="assunto"
+            cols="60"
+            rows="5"
+          >
+          </textarea>
           <div id="txtAssunto"></div>
 
           <button type="submit" (click)="enviar()">Enviar</button>
-
         </form>
       </div>
     </div>

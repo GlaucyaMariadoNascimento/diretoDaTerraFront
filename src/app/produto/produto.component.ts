@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/categoria';
 import { Produto } from '../model/produto';
 import { Usuario } from '../model/usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
@@ -31,7 +32,8 @@ export class ProdutoComponent implements OnInit {
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
     public authService: AuthService,
-    public auth: AuthService
+    public auth: AuthService,
+    private alertas: AlertasService
 
   ) { }
 
@@ -72,7 +74,7 @@ export class ProdutoComponent implements OnInit {
 
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
-      alert('Postagem realizada com sucesso!')
+      this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
       this.produto = new Produto()
       this.getAllProduto()
     })

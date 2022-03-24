@@ -1,33 +1,50 @@
 <div class="imgbelo">
-  <img src="https://img.freepik.com/fotos-gratis/plantio-de-mudas-jovem-planta-na-luz-da-manha-no-fundo-da-natureza_34998-98.jpg" alt="">
+  <img
+    src="https://img.freepik.com/fotos-gratis/plantio-de-mudas-jovem-planta-na-luz-da-manha-no-fundo-da-natureza_34998-98.jpg"
+    alt=""
+  />
 </div>
 
 <div class="container-fluid mt-5 mb-5">
-
   <div class="row">
     <div class="col-md-12">
-      <h1 class="text-center corLetra mb-5">Atualizar categoria</h1>
+      <hr />
+      <h2 class="text d-flex justify-content-center text corLetra">
+        Atualizar categoria
+      </h2>
+      <hr />
     </div>
   </div>
   <div class="row d-flex justify-content-center">
     <div class="col-md-6">
-
       <div class="form-group">
-        <label for="nome">Categoria</label>
-        <input type="text" class="form-control" name='nome' id="nome" [(ngModel)]='categoria.categoria'>
+        <label for="nome">Categoria: <span class="required">*</span></label>
+        <input
+          type="text"
+          class="form-control"
+          name="nome"
+          id="nome"
+          [(ngModel)]="categoria.categoria"
+        />
       </div>
 
       <div class="form-group">
-        <label for="descricao">Descrição</label>
-        <input type="text" class="form-control" name='descricao' id="descricao" [(ngModel)]='categoria.descricao'>
+        <label for="descricao">Descrição: <span class="required">*</span></label>
+        <input
+          type="text"
+          class="form-control"
+          name="descricao"
+          id="descricao"
+          [(ngModel)]="categoria.descricao"
+        />
       </div>
-
 
       <div class="d-flex justify-content-center mt-4">
-        <button class="btn btn-danger mr-4" routerLink='/categoria'>Cancelar</button>
-        <button class="btn corBotao" (click)='atualizar()'>Atualizar</button>
+        <button class="btn btn-danger mr-4" routerLink="/categoria">
+          Cancelar
+        </button>
+        <button class="btn corBotao" (click)="atualizar()">Atualizar</button>
       </div>
     </div>
   </div>
-
 </div>

@@ -1,77 +1,107 @@
 <div class="imgbelo">
-  <img src="https://img.freepik.com/fotos-gratis/plantio-de-mudas-jovem-planta-na-luz-da-manha-no-fundo-da-natureza_34998-98.jpg" alt="">
+  <img
+    src="https://img.freepik.com/fotos-gratis/plantio-de-mudas-jovem-planta-na-luz-da-manha-no-fundo-da-natureza_34998-98.jpg"
+    alt=""
+  />
 </div>
 
-  <div class="container-fluid">
+<div class="container-fluid">
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <hr />
+      <h2 class="text d-flex justify-content-center text corLetra">
+        Categorias
+      </h2>
+      <hr />
+      <h5 class="fs-18 text-center mt-3">
+        Veja aqui todas as categorias cadastradas ou cadastre uma nova:
+      </h5>
 
-    <div class="row mt-5">
-      <div class="col-md-12">
+      <div class="row d-flex justify-content-center mt-5 mb-4">
+        <div class="col-md-3">
+          <div class="form-group">
 
-        <h1 class="fs-50 text-center corLetra">Categorias</h1>
-
-        <h5 class="fs-18 text-center mt-3">Veja aqui todas as categorias cadastradas ou cadastre uma nova:</h5>
-
-        <div class="row d-flex justify-content-center mt-5 mb-4">
-          <div class="col-md-3">
-            <div class="form-group">
-              <input type="text" class="form-control" name='nome' id="nome" placeholder="Digite o nome da categoria" [(ngModel)]="categoria.categoria">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name='descricao' id="descricao" placeholder="Digite a descrição da categoria" [(ngModel)]="categoria.descricao">
-            </div>
-
-
-            <div class="d-flex justify-content-center">
-              <button class="btn corBotao text-white mt-3" (click)="cadastrar()">Cadastrar</button>
-            </div>
-
-
+            <label for="nome">Categoria: <span class="required">*</span></label>
+            <input
+              type="text"
+              class="form-control"
+              name="nome"
+              id="nome"
+              placeholder="Digite o nome da categoria"
+              [(ngModel)]="categoria.categoria"
+            />
 
           </div>
+          <div class="form-group">
+            <label for="descricao">Descrição: <span class="required">*</span></label>
+            <input
+              type="text"
+              class="form-control"
+              name="descricao"
+              id="descricao"
+              placeholder="Digite a descrição da categoria"
+              [(ngModel)]="categoria.descricao"
+            />
+          </div>
+
+          <!-- <small aria-hidden="true" id="required-description">
+            <small class="required">*</small> Preenchimento Obrigatório
+          </small> -->
+
+          <div class="d-flex justify-content-center">
+            <button class="btn corBotao text-white mt-3" (click)="cadastrar()">
+              Cadastrar
+            </button>
+          </div>
         </div>
-
       </div>
-
     </div>
+  </div>
+</div>
 
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <h2 class="text-center corLetra"></h2>
+      <hr />
+      <h2 class="text d-flex justify-content-center text corLetra">
+        Todas as categorias
+      </h2>
+    </div>
   </div>
 
+  <div class="row mt-3 mb-5 d-flex justify-content-center">
+    <div class="col-md-6">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Categoria</th>
+            <th scope="col">Descrição</th>
+            <th scope="col" class="text-right">Modificações</th>
+          </tr>
+        </thead>
 
-  <div class="container">
-
-    <div class="row mt-4">
-      <div class="col-md-12">
-        <h2 class="text-center corLetra">Todas as categorias</h2>
-      </div>
+        <tbody>
+          <tr *ngFor="let item of listaCategoria">
+            <th>{{ item.categoria }}</th>
+            <td>{{ item.descricao }}</td>
+            <td class="d-flex justify-content-end">
+              <button
+                class="btn corBotao text-white mr-3"
+                [routerLink]="['/categoria-edit', item.id]"
+              >
+                Editar
+              </button>
+              <button
+                class="btn btn-danger"
+                [routerLink]="['/categoria-delete', item.id]"
+              >
+                Apagar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-
-    <div class="row mt-3 mb-5 d-flex justify-content-center">
-      <div class="col-md-6">
-
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">Categoria</th>
-              <th scope="col">Descrição</th>
-              <th scope="col" class="text-right">Modificações</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr *ngFor="let item of listaCategoria">
-              <th>{{item.categoria}}</th>
-              <td>{{item.descricao}}</td>
-              <td class="d-flex justify-content-end">
-                <button class="btn corBotao text-white mr-3" [routerLink]="['/categoria-edit', item.id]">Editar</button>
-                <button class="btn btn-danger" [routerLink]="['/categoria-delete', item.id]">Apagar</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-      </div>
-    </div>
-
   </div>
-
-
+</div>

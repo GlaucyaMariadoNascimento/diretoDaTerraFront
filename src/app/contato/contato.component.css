@@ -61,5 +61,6 @@ button:hover {
     width: 100vw;
   }
 
-
-  
+.borda {
+  border-radius: 10px;
+}

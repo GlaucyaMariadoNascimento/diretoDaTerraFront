@@ -1,74 +1,134 @@
+<!-- Imagem de fundo -->
 <div class="imgbelo">
-  <img src="https://img.freepik.com/fotos-gratis/plantio-de-mudas-jovem-planta-na-luz-da-manha-no-fundo-da-natureza_34998-98.jpg" alt="">
+  <img
+    src="https://img.freepik.com/fotos-gratis/plantio-de-mudas-jovem-planta-na-luz-da-manha-no-fundo-da-natureza_34998-98.jpg"
+    alt=""
+  />
 </div>
+<!-- /Imagem de fundo -->
 
 <!-- Cadastro de Produto e Categoria -->
-<div class="container-fluid p-0 m-0 corNavCadastro d-flex justify-content-center">
 
+<div
+  *ngIf="auth.logado()"
+  class="container-fluid p-0 m-0 d-flex justify-content-center"
+>
   <!-- //*ngIf="authService.adm()"  >>> colocar depois de "<a" nos dois links abaixo p/ liberar acesso apenas p/ adm *** -->
 
-  <a href="" class="btn corBotao text-white mr-3 my-3" routerLink="/categoria">Cadastre uma nova categoria</a>
+  <a href="" class="btn corBotao text-white mr-3 my-3" routerLink="/categoria"
+    >Cadastre uma nova categoria</a
+  >
+  <a href="" class="btn corBotao text-white my-3" routerLink="/cadastro-produto"
+    >Cadastre um novo produto</a
+  >
+</div>
+<!-- */Cadastro de Produto e Categoria -->
 
-  <a href="" class="btn corBotao text-white my-3" routerLink="/cadastro-produto">Cadastre um novo produto</a>
-  </div>
-<!-- /Cadastro de Produto e Categoria -->
-
-
-  <div class="row">
+<!--!Título-->
+<div class="container-fluid p-0 m-0">
+  <div class="row align-items-center m-1">
     <div class="col-md-12">
-      <h1 class="text-center corLetra fs-50 my-4">Conheça nossos produtos</h1>
+      <hr />
+      <h2 class="text d-flex justify-content-center text fs-30 corLetra">
+        Conheça nossos produtos
+      </h2>
+      <hr />
     </div>
   </div>
+</div>
+<!--!/Título-->
 
-
-<!-- Nav-Produtos -->
-<ul class="nav nav-tabs d-flex justify-content-center my-4" >
+<!-- *Nav-Produtos -->
+<ul
+  class="nav nav-tabs d-flex justify-content-center my-4"
+  *ngIf="authService.adm()"
+>
   <li class="nav-item">
-    <a class="nav-link active text-secondary font-weight-bold" id="nav-todosProdutos-tab" data-toggle="tab" href="#todosProdutos" role="tab" aria-controls="nav-todosProdutos" aria-selected="true">Todos os produtos</a>
+    <a
+      class="nav-link active text-secondary font-weight-bold"
+      id="nav-todosProdutos-tab"
+      data-toggle="tab"
+      href="#todosProdutos"
+      role="tab"
+      aria-controls="nav-todosProdutos"
+      aria-selected="true"
+      >Todos os produtos</a
+    >
   </li>
 
   <!-- <li class="nav-item">
     <a class="nav-link text-secondary font-weight-bold" id="nav-produtoCategoria-tab" data-toggle="tab" href="#produtoCategoria" role="tab" aria-controls="nav-produtoCategoria" aria-selected="false">Produtos por Categoria</a>
   </li> -->
-
 </ul>
-<!-- /nav-produtos -->
+<!-- */nav-produtos -->
 
-<!-- Pesquisa -->
-<div class="row d-flex justify-content-center my-5">
-<div class="col-md-4">
-  <div class="form-group">
-    <input type="text" class="form-control" id="nome" placeholder="Digite o nome do produto desejado" [(ngModel)]="nomeProduto" (keyup)="findByNomeProduto()">
-  </div>
-</div>
-</div>
-<!-- /Pesquisa -->
-
-
-<!-- Cards Produtos -->
+<!-- *Cards Produtos -->
 <div class="container d-flex justify-content-center">
-  <div class="tab-pane fade show active" id="todosProdutos" role="tabpanel" aria-labelledby="nav-todosProdutos-tab">
+  <div
+    class="tab-pane fade show active"
+    id="todosProdutos"
+    role="tabpanel"
+    aria-labelledby="nav-todosProdutos-tab"
+  >
+    <!-- !Pesquisa -->
+    <div class="row d-flex justify-content-center mt-2 mb-3">
+      <div class="col-md-4">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            placeholder="Digite o nome do produto desejado"
+            [(ngModel)]="nomeProduto"
+            (keyup)="findByNomeProduto()"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- !/Pesquisa -->
+
     <div class="card-columns mb-5">
-      <div class="card" *ngFor='let produto of listaProdutos'>
-        <img src="{{produto.foto}}" class="card-img-top" alt="img do produto" [routerLink]="['/detalhe-produto', produto.id]">
+      <div class="card mt-3 cardHover" *ngFor="let produto of listaProdutos">
+        <img
+          src="{{ produto.foto }}"
+          class="card-img-top"
+          alt="img do produto"
+          [routerLink]="['/detalhe-produto', produto.id]"
+        />
         <div class="card-body text-center p-0">
-          <h5 class="card-title mb-0">{{produto.nome}}</h5>
-          <small>Categoria: {{produto.categoria.categoria}}</small>
-          <p class="card-text mt-3 mb-1">Qtd: {{produto.quantidadekg}}Kg</p>
-          <p class="card-text">R${{produto.preco}}</p>
-            <a class="btn corBotao text-white mb-3 mr-2" [routerLink]="['/detalhe-produto', produto.id]">Detalhes</a>
-            <a class="btn corBotao text-white mb-3" routerLink="/contato">Contato</a>
-            </div>
+          <h5 class="card-title mb-0">{{ produto.nome }}</h5>
+          <small>Categoria: {{ produto.categoria.categoria }}</small>
+          <p class="card-text mt-3 mb-1">Qtd.: {{ produto.quantidadekg }}Kg</p>
+          <p class="card-text">R${{ produto.preco }}</p>
+          <a
+            class="btn corBotao text-white mb-4 mr-2"
+            [routerLink]="['/detalhe-produto', produto.id]"
+            >Detalhes</a
+          >
+          <a class="btn corBotao text-white mb-4" routerLink="/contato"
+            >Contato</a
+          >
         </div>
       </div>
     </div>
   </div>
+</div>
 
+<!-- *card de produtos por categoria -->
+<!-- <div class="tab-pane fade show" id="produtoCategoria" role="tabpanel" aria-labelledby="nav-produtoCategoria-tab">
 
-<!-- card de produtos por categoria -->
-<!-- <div class="row" *ngFor="let categoria of listaCategorias">
-  <div class="col mb-4">
-    <div class="card *ngFor='let produto of listaProdutos'">
+<!-- !Pesquisa -->
+<!-- <div class="row d-flex justify-content-center my-5">
+  <div class="col-md-4">
+    <div class="form-group">
+      <input type="text" class="form-control" id="nome" placeholder="Frutas, verduras, leguminosas" [(ngModel)]="nomeCategoria" (keyup)="findByNomeCategoria()">
+    </div>
+  </div>
+  </div> -->
+<!-- !/Pesquisa -->
+
+<!-- <div class="card-columns mb-5" *ngFor="let categoria of listaCategorias">
+    <div class="card text-center mt-3 cardHover" *ngFor='let produto of categoria.produto'>
       <img src="{{produto.foto}}" class="card-img-top" alt="img do produto">
       <div class="card-body text-center">
         <h5 class="card-title">{{produto.nome}}</h5>
@@ -80,5 +140,5 @@
       </div>
     </div>
   </div>
-</div> -->
-
+</div>  -->
+<!-- */card de produtos por categoria -->

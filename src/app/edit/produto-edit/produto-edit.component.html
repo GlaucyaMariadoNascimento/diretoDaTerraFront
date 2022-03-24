@@ -1,57 +1,106 @@
 <div class="imgbelo">
-  <img src="https://img.freepik.com/fotos-gratis/plantio-de-mudas-jovem-planta-na-luz-da-manha-no-fundo-da-natureza_34998-98.jpg" alt="">
+  <img
+    src="https://img.freepik.com/fotos-gratis/plantio-de-mudas-jovem-planta-na-luz-da-manha-no-fundo-da-natureza_34998-98.jpg"
+    alt=""
+  />
 </div>
 
 <div class="container my-5">
-
   <div class="row">
-    <div class="clo-md-12">
-      <h1 class="text-center corLetra">Atualizar produto</h1>
+    <div class="col-md-12">
+      <hr />
+      <h2 class="text d-flex justify-content-center text corLetra">
+        Atualizar produto
+      </h2>
+      <hr />
     </div>
   </div>
 
   <div class="row d-flex justify-content-center my-5">
-<div class="col-md-6">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="nome">Produto: <span class="required">*</span></label>
+        <input
+          type="text"
+          class="form-control"
+          name="nome"
+          id="nome"
+          placeholder="Digite o nome do produto"
+          [(ngModel)]="produto.nome"
+        />
+      </div>
 
-  <div class="form-group">
-    <label for="nome">Nome</label>
-    <input type="text" class="form-control" name='nome' id="nome" placeholder="Digite o nome do produto" [(ngModel)]="produto.nome">
+      <div class="form-group">
+        <label for="preco">Preço: <span class="required">*</span></label>
+        <input
+          type="text"
+          class="form-control"
+          name="preco"
+          id="preco"
+          placeholder="Digite o preço do produto"
+          [(ngModel)]="produto.preco"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="produtor">Produtor: <span class="required">*</span></label>
+        <input
+          type="text"
+          class="form-control"
+          name="produtor"
+          id="produtor"
+          placeholder="Digite o nome do produtor"
+          [(ngModel)]="produto.produtor"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="quantidadekg">Quantidade: <span class="required">*</span></label>
+        <input
+          type="text"
+          class="form-control"
+          name="quantidadekg"
+          id="quantidadekg"
+          placeholder="Digite a quantidade em kg do produto"
+          [(ngModel)]="produto.quantidadekg"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="foto">Foto:</label>
+        <input
+          type="text"
+          class="form-control"
+          name="foto"
+          id="foto"
+          placeholder="Link da foto do produto"
+          [(ngModel)]="produto.foto"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="texto">Escolha uma categoria: <span class="required">*</span></label>
+        <select
+          class="form-control"
+          name="tema"
+          id="tema"
+          [(ngModel)]="idCategoria"
+          (change)="findByIdCategoria()"
+        >
+          <option *ngFor="let item of listaCategorias" value="{{ item.id }}">
+            {{ item.categoria }}
+          </option>
+        </select>
+      </div>
+
+      <div class="d-flex justify-content-center mt-4">
+        <button class="btn btn-danger mr-4" routerLink="/cadastro-produto">
+          Cancelar
+        </button>
+        <button class="btn btn corBotao" (click)="atualizar()">
+          Atualizar
+        </button>
+      </div>
+    </div>
   </div>
-
-  <div class="form-group">
-    <label for="preco">Preço</label>
-    <input type="text" class="form-control" name='preco' id="preco" placeholder="Digite o preço do produto" [(ngModel)]="produto.preco">
-  </div>
-
-  <div class="form-group">
-    <label for="produtor">Produtor</label>
-    <input type="text" class="form-control" name='produtor' id="produtor" placeholder="Digite o nome do produtor" [(ngModel)]="produto.produtor">
-  </div>
-
-  <div class="form-group">
-    <label for="quantidadekg">Quantidade</label>
-    <input type="text" class="form-control" name='quantidadekg' id="quantidadekg" placeholder="Digite a quantidade em kg do produto" [(ngModel)]="produto.quantidadekg">
-  </div>
-
-  <div class="form-group">
-    <label for="foto">Foto</label>
-    <input type="text" class="form-control" name='foto' id="foto" placeholder="Link da foto do produto" [(ngModel)]="produto.foto">
-  </div>
-
-  <div class="form-group">
-    <label for="texto">Escolha uma categoria:</label>
-    <select class="form-control" name="tema" id="tema" [(ngModel)]='idCategoria' (change)="findByIdCategoria()">
-      <option *ngFor="let item of listaCategorias" value="{{item.id}}">{{item.categoria}}</option>
-    </select>
-  </div>
-
-  <div class="d-flex justify-content-center mt-4">
-    <button class="btn btn-danger mr-4" routerLink="/cadastro-produto">Cancelar</button>
-    <button class="btn btn corBotao" (click)="atualizar()">Atualizar</button>
-  </div>
-
-</div>
-
-  </div>
-
 </div>

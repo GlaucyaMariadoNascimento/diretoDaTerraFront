@@ -10,6 +10,8 @@ import { AuthService } from '../service/auth.service';
 })
 export class MenuComponent implements OnInit {
 
+  id = environment.id
+
   constructor(
     private router: Router,
     public auth: AuthService

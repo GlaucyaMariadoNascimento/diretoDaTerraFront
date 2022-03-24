@@ -1,24 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 ul {
-    list-style: none;
+  list-style: none;
 }
 
-html
-{
+html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
-.fs-50{
-  font-size: 50pt;
+.fs-30 {
+  font-size: 30pt;
 }
 
-.fs-18{
+.fs-18 {
   font-size: 18pt;
 }
 
-.corBotao
-{
+.corBotao {
   background-color: #8dad7b;
 }
 .corBotao:hover {
@@ -26,5 +24,11 @@ html
 }
 
 .corLetra {
-  color: #8CAC7B;
+  color: #8cac7b;
+}
+
+.text {
+  text-transform: uppercase;
+  font-weight: 900;
+  color: hsla(135, 91%, 34%, 0.548);
 }

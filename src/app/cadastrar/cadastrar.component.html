@@ -1,43 +1,60 @@
 <div class="imgback">
-  <img src="https://img.freepik.com/fotos-gratis/plantio-de-mudas-jovem-planta-na-luz-da-manha-no-fundo-da-natureza_34998-98.jpg" alt="">
+  <img
+    src="https://img.freepik.com/fotos-gratis/plantio-de-mudas-jovem-planta-na-luz-da-manha-no-fundo-da-natureza_34998-98.jpg"
+    alt=""
+  />
 </div>
-<div class="row">
 
-  <div class="col-md-5"></div>
-
-  <div class="col-md-6">
-
-    <div class="container">
-      
-  
-      <form>
-        <h2>Cadastro</h2>
+<div class="col-md-12 mb-5 d-flex justify-content-center">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="container">
+        <form>
+          <h2>Cadastro</h2>
           <div class="input-field">
-            <input type="text" name="nome" placeholder="Nome" id="nome" [(ngModel)]="usuario.nome"/>
-          <label for="nome">Nome: </label>
+            <input
+              type="text"
+              name="nome"
+              placeholder="Nome"
+              id="nome"
+              [(ngModel)]="usuario.nome"
+            />
+            <label for="nome">Nome: </label>
           </div>
-          
+
           <div class="input-field">
-            <input type="text" name="email" placeholder="Seu e-mail" id="email" [(ngModel)]= "usuario.email"/>
+            <input
+              type="text"
+              name="email"
+              placeholder="Seu e-mail"
+              id="email"
+              [(ngModel)]="usuario.email"
+            />
             <label for="email">E-mail: </label>
           </div>
 
           <div class="input-field">
-            <input type="text" name="foto" placeholder="Foto" id="foto" [(ngModel)]="usuario.foto"/>
-            <label for="foto">Foto: </label>
-          </div>
-
-          <div class="input-field">
-            <input type="password" name="senha" id="senha" placeholder="Sua senha" (input)='confirmSenha($event)'
+            <input
+              type="password"
+              name="senha"
+              id="senha"
+              placeholder="Sua senha"
+              (input)="confirmSenha($event)"
             />
             <label for="senha">Senha: </label>
           </div>
 
           <div class="input-field">
-            <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Confirme sua senha" [(ngModel)]='usuario.senha'/>
+            <input
+              type="password"
+              name="confirmarSenha"
+              id="confirmarSenha"
+              placeholder="Confirme sua senha"
+              [(ngModel)]="usuario.senha"
+            />
             <label for="confirmarSenha">Confirmar Senha: </label>
           </div>
-          
+
           <div class="input-field">
             <select name="tipo" id="tipo" (change)="tipoUser($event)">
               <option>Selecione um tipo de usuário:</option>
@@ -45,18 +62,27 @@
               <option value="adm">Administrador</option>
             </select>
           </div>
-  
+
           <div class="d-flex justify-content-center mt-5">
-            <button type="submit" class="btn btn-danger mr-3" id="tamBotao" routerLink="/entrar">Cancelar</button>
-            <button type="submit" class="btn btn-success" id="tmBotao" (click)="cadastrar()">Cadastrar</button>
-
+            <button
+              type="submit"
+              class="btn btn-danger mr-3"
+              id="tamBotao"
+              routerLink="/entrar"
+            >
+              Cancelar
+            </button>
+            <button
+              type="submit"
+              class="btn btn-success"
+              id="tmBotao"
+              (click)="cadastrar()"
+            >
+              Cadastrar
+            </button>
           </div>
-      </form>
-  
-</div>
-
-
+        </form>
+      </div>
+    </div>
   </div>
-
 </div>
-  

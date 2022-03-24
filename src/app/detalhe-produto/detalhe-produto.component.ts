@@ -11,6 +11,7 @@ import { ProdutoService } from '../service/produto.service';
 export class DetalheProdutoComponent implements OnInit {
 
   produto: Produto = new Produto()
+  listaProdutos: Produto[]
 
   constructor(
     private produtoService: ProdutoService,
@@ -19,9 +20,17 @@ export class DetalheProdutoComponent implements OnInit {
   ) { }
 
   ngOnInit(){
-
+    window.scroll(0,0)
     let id = this.route.snapshot.params['id']
+    this.getAllProduto()
     this.getByIdProduto(id)
+  }
+
+  getAllProduto() {
+    this.produtoService.getAllProduto().subscribe((resp: Produto[]) => {
+      this.listaProdutos = resp
+      console.log(this.listaProdutos)
+    })
   }
 
   getByIdProduto(id: number) {

@@ -1,26 +1,37 @@
 <div class="imgbelo">
-  <img src="https://img.freepik.com/fotos-gratis/plantio-de-mudas-jovem-planta-na-luz-da-manha-no-fundo-da-natureza_34998-98.jpg" alt="">
+  <img
+    src="https://img.freepik.com/fotos-gratis/plantio-de-mudas-jovem-planta-na-luz-da-manha-no-fundo-da-natureza_34998-98.jpg"
+    alt=""
+  />
 </div>
 
 <div class="container">
-    <div class="jumbotron jumbotron-fluid jbcor d-flex flex-column align-items-center justify-content-between">
-      <h1 class="mb-5 text-center cor font-italic">Compre conosco</h1>
-        <div class="row">
-          <div class="col-md-6 ">
-            <img class="img" src="{{produto.foto}}" alt="">
-          </div>
-          <div class="texto col-md-6 mb-5">
-            <h3 class="texto mb-3">{{produto.nome}}</h3><br><br>
-            <h5 class="texto mb-3">Categoria: {{produto.categoria.categoria}}</h5>
-            <h5 class="texto mb-3">Valor: R$ {{produto.preco}}</h5>
-            <h5 class="texto mb-3">Quantidade: {{produto.quantidadekg}}Kg</h5>
-            <h5 class="texto mb-3">Produtor: {{produto.produtor}}</h5>
+  <div
+    class="jumbotron jumbotron-fluid jbcor d-flex flex-column align-items-center justify-content-between borda"
+  >
+    <h1 class="mb-5 text-center cor text">Compre conosco</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <img class="img borda" src="{{ produto.foto }}" alt="foto do produto" />
+      </div>
 
-          </div>
-        </div>
+      <div class="texto col-md-6 mb-5">
+        <h3 class="texto mb-3">{{ produto.nome }}</h3>
+        <hr />
+        <br /><br />
+        <h5 class="texto mb-3">Categoria: {{ produto.categoria.categoria }}</h5>
+        <h5 class="texto mb-3">Valor: R$ {{ produto.preco }}</h5>
+        <h5 class="texto mb-3">Quantidade: {{ produto.quantidadekg }}Kg</h5>
+        <h5 class="texto mb-3">Produtor: {{ produto.produtor }}</h5>
+      </div>
+    </div>
 
-        <button class="mt-5 corBotao text-white" type="submit" routerLink="/contato">Fazer Pedido</button>
-
-</div>
-
+    <button
+      class="mt-5 corBotao text-white"
+      type="submit"
+      routerLink="/contato"
+    >
+      Fazer Pedido
+    </button>
+  </div>
 </div>

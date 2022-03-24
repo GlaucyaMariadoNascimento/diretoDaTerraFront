@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/categoria';
+import { AlertasService } from '../service/alertas.service';
 import { CategoriaService } from '../service/categoria.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class CategoriaComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -24,6 +26,11 @@ export class CategoriaComponent implements OnInit {
 
     // if(environment.token == '') {
     //   this.router.navigate(['/entrar'])
+    // }
+
+    // if(environment.tipo != 'adm') {
+    //   this.alertas.showAlertInfo("Você precisa ser administrador para acessar essa rota!")
+    //   this.router.navigate(['/produto'])
     // }
 
     this.categoriaService.refreshToken()
@@ -38,7 +45,7 @@ export class CategoriaComponent implements OnInit {
 
   cadastrar() {
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {this.categoria = resp
-    alert('Categoria cadastrada com sucesso!')
+      this.alertas.showAlertSuccess('Categoria cadastrada com sucesso!')
     this.findAllCategorias()
     this.categoria = new Categoria()
     })

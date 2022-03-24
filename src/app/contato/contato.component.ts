@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-contato',
@@ -7,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContatoComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private alertas: AlertasService
+  ) { }
 
   ngOnInit(){
+    window.scroll(0,0)
   }
 
   enviar(){
-    alert('futuramente iremos implementar no backend para o email ser enviado')
+    this.alertas.showAlertInfo('Futuramente iremos implementar no back-end para o e-mail ser enviado')
   }
 }

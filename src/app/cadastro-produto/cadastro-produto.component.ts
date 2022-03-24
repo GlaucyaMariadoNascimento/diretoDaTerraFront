@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/categoria';
 import { Produto } from '../model/produto';
 import { Usuario } from '../model/usuario';
+import { AlertasService } from '../service/alertas.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -28,14 +29,21 @@ export class CadastroProdutoComponent implements OnInit {
     private router: Router,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
     window.scroll(0,0);
 
-    // if(environment.token == '') {
+// if(environment.token == '') {
     //   this.router.navigate(['/entrar'])
     // }
+
+    // if(environment.tipo != 'adm') {
+    //   this.alertas.showAlertInfo("Você precisa ser administrador para acessar essa rota!")
+    //   this.router.navigate(['/produto'])
+    // }
+
     this.produtoService.refreshToken()
     this.findAllProdutos()
     this.findAllCategorias()
@@ -66,7 +74,7 @@ export class CadastroProdutoComponent implements OnInit {
     this.user.id = this.idUser
     this.produto.usuario = this.user
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {this.produto = resp
-    alert('Produto cadastrado com sucesso!')
+      this.alertas.showAlertSuccess('Produto cadastrado com sucesso!')
     this.findAllProdutos()
     this.produto = new Produto()
     })
